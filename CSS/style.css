@@ -1,0 +1,31 @@
+body{
+  /* margin: 0; */
+  /* padding: 0; */
+  font-size: 30px;
+}
+*,::before,::after{
+  /* box-sizing: border-box; */
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+a:link{
+  /* a連結底線消失 */
+  /* text-decoration: none; */
+}
+img{
+  /* display: block; */
+}
+button{
+  border: none;
+  /* cursor: pointer;把滑鼠游標變成手指形狀 */
+  cursor: pointer;
+}
+
+/* .item跟label是兄弟層，緊跟.item後的第一個label元素 */
+.item:checked + label {
+  text-decoration:line-through;
+  /*  checkbox打勾後出現刪除線  */
+}
