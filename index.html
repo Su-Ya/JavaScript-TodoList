@@ -10,44 +10,54 @@
   <title>ToDoList</title>
 </head>
 <body>
-  <form>
-    <input type="text" id="task" value="test">
-    <button type="button" id="btnAddNew">Add</button>
+  <!-- <form>
+    <input type="text" class="task" value="test">
+    <button type="button" class="btnAddNew">Add</button>
   </form>
-  <ul id="newList">
+  <ul class="newList">
     New List
-    <!-- <li>
+    <li>
       <input type="checkbox" class="checkItem" name="check">
       <label for="check">test</label>
-      <input type="text" class="inputUpdate" id="update">
+      <input type="text" class="inputUpdate">
       <button class="btnUpdate">Edit</button>
       <button class="btnDelete">Delete</button>
-    </li> -->
-  </ul>
+    </li>
+  </ul> -->
 
-
-
-  <!-- <herder>
+  <herder>
     <h1>Todo List</h1>
   </herder>
   <main>
     <section>
-      <form action="./index.html" method="get">
-        <input type="text" id="task" required oninvalid="setCustomValidity('请输入代辦事項！');">
-        <input type="submit" id="add" value="add">
-      </form>
+      <div class="task-container">
+        <form>
+          <input type="text" class="task"  placeholder=" type someting here...">
+          <button type="button" class="btnAddNew">Add</button>
+        </form>
+      </div>
     </section>
     <section>
-      <div class="list">
-        <ul>
+      <div class="list-container">
+        <ul class="newList">
           <li>
-            <input type="checkbox" id="item1">
-            <label for="item1">book</label>
+            <input type="checkbox" class="checkItem" name="check">
+            <label for="check">test</label>
+            <input type="text" class="inputUpdate">
+            <button class="btnUpdate">Edit</button>
+            <button class="btnDelete">Delete</button>
+          </li>
+          <li>
+            <input type="checkbox" class="checkItem" name="check">
+            <label for="check">test</label>
+            <input type="text" class="inputUpdate">
+            <button class="btnUpdate">Edit</button>
+            <button class="btnDelete">Delete</button>
           </li>
         </ul>
       </div>
     </section>
-  </main> -->
+  </main>
 
 
 </body>

@@ -1,7 +1,7 @@
 /*jshint esversion:6*/
 
 function showList(){
-  let addNewListText = document.querySelector('#task').value;
+  let addNewListText = document.querySelector('.task').value;
   if(addNewListText === ""){
     window.alert('请输入代辦事項！');
   }
@@ -19,7 +19,6 @@ function showList(){
     let updatelistItem = document.createElement('input');
     updatelistItem.type = "text";
     updatelistItem.className = "inputUpdate";
-    updatelistItem.id = "update";
 
     let btnUpdate = document.createElement('button');
     btnUpdate.className = "btnUpdate";
@@ -51,7 +50,7 @@ function showList(){
     });
 
 
-    document.querySelector('#newList').appendChild(listItem);
+    document.querySelector('.newList').appendChild(listItem);
 
     /***********************************************************************
     想法順序二
@@ -80,7 +79,7 @@ deleteItem 方法只要把傳進來的 li 物件刪除就好
 function deleteItem(e,listItem){
   // console.log(e);
   // console.log('listItem',listItem);
-  document.querySelector('#newList').removeChild(listItem);
+  document.querySelector('.newList').removeChild(listItem);
 }
 
 
@@ -98,7 +97,7 @@ function deleteItem(e,listItem){
 //   let listItem = document.querySelectorAll('li');
 //   listItem.forEach(function(item,liIndex){
 //     if(index === liIndex){
-//       document.querySelector('#newList').removeChild(item);
+//       document.querySelector('.newList').removeChild(item);
 //     }
 //   });
 // }
@@ -113,7 +112,7 @@ function deleteItem(e,listItem){
 //   listItem.forEach(function(item,liIndex){
 //     console.log(item);
 //     if(!found && index === liIndex){
-//       document.querySelector('#newList').removeChild(item);
+//       document.querySelector('.newList').removeChild(item);
 //       found = true;
 //     }
 //   });
@@ -121,14 +120,8 @@ function deleteItem(e,listItem){
 
 
 // let btnAdd = document.querySelector('#addNew');
-let btnAdd = document.querySelector('#btnAddNew');
-btnAdd.addEventListener('click',
-function(e){
-  // preventDefault()可以移除預設事件
-  e.preventDefault()
-  showList()
-}
-);
+let btnAdd = document.querySelector('.btnAddNew');
+btnAdd.addEventListener('click',showList);
 
 /***********************************************************************
 想法順序ㄧ
@@ -143,7 +136,7 @@ function(e){
 /***********************************************************************
 按下鍵盤 enter 事件，未完成
 ************************************************************************/
-// let addNewListText = document.querySelector('#task');
+// let addNewListText = document.querySelector('.task');
 // inputaddNewListText.addEventListener('keydown',function(e){
 //   if( e.keyCode === 13){
 

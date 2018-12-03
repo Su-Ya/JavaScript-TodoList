@@ -1,10 +1,44 @@
-body{
-  /* margin: 0; */
-  /* padding: 0; */
-  font-size: 30px;
-}
 *,::before,::after{
   /* box-sizing: border-box; */
+}
+a:link{
+  /* a連結底線消失 */
+  /* text-decoration: none; */
+}
+img{
+  /* display: block; */
+}
+body{
+  margin: 0;
+  font-size: 30px;
+  background: #CEB5A7;
+  text-align: center;
+  text-transform: uppercase;
+}
+h1{
+  margin: 0;
+  font-size: 70px;
+  color: #fff;
+  opacity: 0.7;
+  letter-spacing: 10px;
+  text-shadow: 5px 5px 10px gray;
+}
+.task-container{
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 10px;
+}
+.task-container>input{
+  font-weight: 200;
+  border-radius: 10px;
+  width: 80%;
+}
+.list-container{
+}
+.newList{
+  /* background-color: #EFF6E0; */
 }
 ul{
   margin: 0;
@@ -16,26 +50,17 @@ li{
 }
 li>*{
   vertical-align: middle;
-}
-a:link{
-  /* a連結底線消失 */
-  /* text-decoration: none; */
-}
-img{
-  /* display: block; */
+  margin-right: 10px;
 }
 button{
   border: none;
   /* cursor: pointer;把滑鼠游標變成手指形狀 */
   cursor: pointer;
-  font-size: 20px;
+  font-size: 30px;
   color: #fff;
   border-radius: 5px;
 }
 .btnAddNew{
-  background-color: black;
-}
-#btnAddNew{
   background-color: black;
 }
 .btnUpdate{
@@ -44,7 +69,12 @@ button{
 .btnDelete{
   background-color: red;
 }
-
+.inputUpdate{
+  visibility: hidden;
+}
+input{
+  font-size: 30px;
+}
 /* .item跟label是兄弟層，緊跟.item後的第一個label元素 */
 .checkItem:checked + label {
   text-decoration:line-through;
