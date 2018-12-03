@@ -11,6 +11,12 @@ ul{
   padding: 0;
   list-style-type: none;
 }
+li{
+  border-bottom: 1px #000;
+}
+li>*{
+  vertical-align: middle;
+}
 a:link{
   /* a連結底線消失 */
   /* text-decoration: none; */
@@ -22,10 +28,25 @@ button{
   border: none;
   /* cursor: pointer;把滑鼠游標變成手指形狀 */
   cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 5px;
+}
+.btnAddNew{
+  background-color: black;
+}
+#btnAddNew{
+  background-color: black;
+}
+.btnUpdate{
+  background-color: blue;
+}
+.btnDelete{
+  background-color: red;
 }
 
 /* .item跟label是兄弟層，緊跟.item後的第一個label元素 */
-.item:checked + label {
+.checkItem:checked + label {
   text-decoration:line-through;
   /*  checkbox打勾後出現刪除線  */
 }
