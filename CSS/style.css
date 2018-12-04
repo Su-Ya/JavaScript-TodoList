@@ -2,7 +2,6 @@ body{
   margin: 0;
   font-size: 30px;
   background: #CEB5A7;
-  text-align: center;
 }
 h1{
   margin: 0;
@@ -12,6 +11,7 @@ h1{
   letter-spacing: 10px;
   text-shadow: 5px 5px 10px gray;
   text-transform: uppercase;
+  text-align: center;
 }
 .task-container{
   width: 60%;
@@ -19,6 +19,7 @@ h1{
   padding: 20px;
   background-color: rgba(255,255,255,0.5);
   border-radius: 10px;
+  text-align: center;
 }
 .task-container input{
   font-weight: 200;
@@ -26,6 +27,8 @@ h1{
   width: 80%;
 }
 .list-container{
+  width: 60%;
+  margin: 0 auto;
 }
 .newList{
   /* background-color: #EFF6E0; */
@@ -36,11 +39,16 @@ ul{
   list-style-type: none;
 }
 li{
-  border-bottom: 1px #000;
+  border-bottom: 1px solid;
+  position: relative;
+  margin: 10px 0;
 }
 li>*{
   vertical-align: middle;
   margin-right: 10px;
+}
+input{
+  font-size: 30px;
 }
 button{
   border: none;
@@ -55,16 +63,24 @@ button{
 }
 .btnUpdate{
   background-color: #B7C14B;
+  position: absolute;
+  right: 114px;
+  bottom: 0;
 }
 .btnRevised{
   background-color: #B7C14B;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 114px;
 }
 .btnDelete{
   background-color: #CE6529;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
-input{
-  font-size: 30px;
-}
+
 /* .item跟label是兄弟層，緊跟.item後的第一個label元素 */
 .checkItem:checked + label {
   text-decoration:line-through;
