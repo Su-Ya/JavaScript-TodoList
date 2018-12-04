@@ -18,11 +18,17 @@ function showList(){
 
     let updatelistItem = document.createElement('input');
     updatelistItem.type = "text";
+    updatelistItem.style.visibility = "hidden";
     updatelistItem.className = "inputUpdate";
 
     let btnUpdate = document.createElement('button');
     btnUpdate.className = "btnUpdate";
     btnUpdate.textContent = "Edit";
+
+    let btnRevised = document.createElement('button');
+    btnRevised.className = "btnRevised";
+    btnRevised.style.display = "none";
+    btnRevised.textContent = "Revised";
 
     let btnDelete = document.createElement('button');
     btnDelete.className = "btnDelete";
@@ -33,6 +39,7 @@ function showList(){
     listItem.appendChild(listItemText);
     listItem.appendChild(updatelistItem);
     listItem.appendChild(btnUpdate);
+    listItem.appendChild(btnRevised);
     listItem.appendChild(btnDelete);
 
     /***********************************************************************
@@ -47,6 +54,16 @@ function showList(){
     btnDelete.addEventListener('click',
     function(e){
       deleteItem(e,listItem);
+    });
+
+    btnUpdate.addEventListener('click',
+    function(e){
+      updateItem(e,updatelistItem,btnUpdate,btnRevised);
+    });
+
+    btnRevised.addEventListener('click',
+    function(e){
+      revisedItem(e,updatelistItem,btnUpdate,btnRevised,listItemText);
     });
 
 
@@ -82,6 +99,22 @@ function deleteItem(e,listItem){
   document.querySelector('.newList').removeChild(listItem);
 }
 
+function updateItem(e,updatelistItem,btnUpdate,btnRevised){
+  updatelistItem.style.visibility = null;
+  btnUpdate.style.display = "none";
+  btnRevised.style.display = "inline-block";
+}
+
+function revisedItem(e,updatelistItem,btnUpdate,btnRevised,listItemText){
+  let updatelistItemText = updatelistItem.value;
+
+  listItemText.textContent = updatelistItemText;
+
+  updatelistItem.style.visibility = "hidden";
+  btnUpdate.style.display = "inline-block";
+  btnRevised.style.display = "none";
+
+}
 
 /***********************************************************************
 想法順序三
