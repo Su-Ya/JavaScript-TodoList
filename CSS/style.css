@@ -83,8 +83,8 @@ button{
 
 /* .item跟label是兄弟層，緊跟.item後的第一個label元素 */
 .checkItem:checked + label {
+  /* checkbox打勾後出現刪除線 */
   text-decoration:line-through;
-  /*  checkbox打勾後出現刪除線  */
 }
 
 
