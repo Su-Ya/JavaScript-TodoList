@@ -1,13 +1,3 @@
-*,::before,::after{
-  /* box-sizing: border-box; */
-}
-a:link{
-  /* a連結底線消失 */
-  /* text-decoration: none; */
-}
-img{
-  /* display: block; */
-}
 body{
   margin: 0;
   font-size: 30px;
@@ -30,7 +20,7 @@ h1{
   background-color: rgba(255,255,255,0.5);
   border-radius: 10px;
 }
-.task-container>input{
+.task-container input{
   font-weight: 200;
   border-radius: 10px;
   width: 80%;
@@ -79,4 +69,19 @@ input{
 .checkItem:checked + label {
   text-decoration:line-through;
   /*  checkbox打勾後出現刪除線  */
+}
+
+
+
+
+
+*,::before,::after{
+  /* box-sizing: border-box; */
+}
+a:link{
+  /* a連結底線消失 */
+  /* text-decoration: none; */
+}
+img{
+  /* display: block; */
 }

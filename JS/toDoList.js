@@ -69,6 +69,7 @@ function showList(){
 
     document.querySelector('.newList').appendChild(listItem);
 
+
     /***********************************************************************
     想法順序二
     1. 最開始用let btnDelete = document.querySelector('.btnDelete');
@@ -85,8 +86,9 @@ function showList(){
     //   item.addEventListener('click',function(){deleteItem(index)});
     // });
 
-
   }//else 結尾
+
+  document.querySelector('.task').value = "";
 }
 
 /***********************************************************************
@@ -105,15 +107,20 @@ function updateItem(e,updatelistItem,btnUpdate,btnRevised){
   btnRevised.style.display = "inline-block";
 }
 
+
 function revisedItem(e,updatelistItem,btnUpdate,btnRevised,listItemText){
   let updatelistItemText = updatelistItem.value;
-
-  listItemText.textContent = updatelistItemText;
-
-  updatelistItem.style.visibility = "hidden";
-  btnUpdate.style.display = "inline-block";
-  btnRevised.style.display = "none";
-
+  if(updatelistItemText === ""){
+    updatelistItem.style.visibility = "hidden";
+    btnUpdate.style.display = "inline-block";
+    btnRevised.style.display = "none";
+  }
+  else{
+    listItemText.textContent = updatelistItemText;
+    updatelistItem.style.visibility = "hidden";
+    btnUpdate.style.display = "inline-block";
+    btnRevised.style.display = "none";
+  }
 }
 
 /***********************************************************************
