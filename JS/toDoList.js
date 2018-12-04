@@ -12,7 +12,7 @@ function showList(){
     //建立 checkbox 物件
     let checkbox = document.createElement('input');
     checkbox.type = "checkbox";
-    checkbox.className = "checkItem";
+    checkbox.className = "checkItem unchecked";
     checkbox.name = "check";
 
     //建立 label 物件用來放代辦事項文字，為搭配 checkbox 出現文字刪除線所以用 label
@@ -76,11 +76,16 @@ function showList(){
       revisedItem(e,updatelistItem,btnUpdate,btnRevised,listItemText);
     });
 
+    //按下鍵盤 enter 事件
     updatelistItem.addEventListener('keydown',function(e){
       if(e.keyCode === 13){
         e.preventDefault();
         revisedItem(e,updatelistItem,btnUpdate,btnRevised,listItemText);
       }
+    });
+
+    checkbox.addEventListener('click',function(e){
+      addClassName(checkbox);
     });
 
     //取得 ul 物件，放入 li 物件(清單項目)
@@ -186,7 +191,7 @@ btnAdd.addEventListener('click',function(e){
   showList();
 });
 
-//按下鍵盤 enter 事件
+//建立 input 物件(新增事項輸入框)，監聽鍵盤 enter 事件
 let inputNewList = document.querySelector('.task');
 inputNewList.addEventListener('keydown',function(e){
   if( e.keyCode === 13){
@@ -203,3 +208,79 @@ inputNewList.addEventListener('keydown',function(e){
 ************************************************************************/
 // let btnDelete = document.querySelector('.btnDelete');
 // btnDelete.addEventListener('click',deleteItem);
+
+
+function addClassName(checkbox){
+  if(checkbox.checked === true){
+    checkbox.className = "checkItem checked";
+  }
+  else{
+    checkbox.className = "checkItem unchecked";
+  }
+
+  if(status === "All"){
+    showAllList();
+  }
+  else if(status === "Completed"){
+    showCompletedList();
+  }
+  else if(status === "InCompleted"){
+    showInCompletedList();
+  }
+  console.log(checkbox.className);
+  console.log(status);
+}
+
+var status = "All";
+function showAllList(){
+  let allList = document.querySelectorAll('.checkItem');
+  allList.forEach(function(item,index){
+    item.parentElement.removeAttribute("style");
+  });
+  status = "All"
+}
+let btnAll = document.querySelector('.btnAll');
+btnAll.addEventListener('click',function(e){
+  e.preventDefault();
+  showAllList();
+});
+
+function showCompletedList(){
+  // let checkedList = document.querySelectorAll('.checkItem.checked');
+  // console.log(checkedList);
+  let uncheckedList = document.querySelectorAll('.checkItem.unchecked');
+  uncheckedList.forEach(function(item,index){
+    //parentElement 取得父層節點
+    item.parentElement.style.display = "none";
+  });
+  let inCompletedList = document.querySelectorAll('.checkItem.checked');
+  inCompletedList.forEach(function(item,index){
+    // console.log(item.parentElement);
+    item.parentElement.removeAttribute("style");
+  });
+  status = "Completed";
+}
+let btnCompleted = document.querySelector('.btnCompleted');
+btnCompleted.addEventListener('click',function(e){
+  e.preventDefault();
+  showCompletedList();
+});
+
+function showInCompletedList(){
+  let allList = document.querySelectorAll('.checkItem.unchecked');
+  allList.forEach(function(item,index){
+    // console.log(item.parentElement);
+    item.parentElement.removeAttribute("style");
+  });
+  let inCompletedList = document.querySelectorAll('.checkItem.checked');
+  inCompletedList.forEach(function(item,index){
+    // console.log(item.parentElement);
+    item.parentElement.style.display = "none";
+  });
+  status = "InCompleted";
+}
+let btnInCompleted = document.querySelector('.btnInCompleted');
+btnInCompleted.addEventListener('click',function(e){
+  e.preventDefault();
+  showInCompletedList();
+});
