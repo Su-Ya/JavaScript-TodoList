@@ -47,10 +47,13 @@ button{
   border-radius: 10px;
   text-align: center;
 }
-.task-container input{
+.input-task{
   font-weight: 200;
   border-radius: 10px;
   width: 80%;
+}
+.btnAddNew{
+  background-color: #282427;
 }
 .list-container{
   width: 60%;
@@ -66,23 +69,19 @@ button{
   margin-right: 10px;
   font-size: 20px;
 }
-.btnAddNew{
-  background-color: #282427;
-}
-.btnUpdate{
+.JSbtnEdit{
   background-color: #B7C14B;
   position: absolute;
   right: 114px;
   bottom: 0;
 }
-.btnRevised{
+.JSbtnRevised{
   background-color: #B7C14B;
-  display: none;
   position: absolute;
   bottom: 0;
   right: 114px;
 }
-.btnDelete{
+.JSbtnDelete{
   background-color: #CE6529;
   position: absolute;
   right: 0;
@@ -90,19 +89,21 @@ button{
 }
 
 /* .item跟label是兄弟層，緊跟.item後的第一個label元素 */
-.checkItem:checked + label {
+.JStodoCheckBox:checked + label {
   /* checkbox打勾後出現刪除線 */
   text-decoration:line-through;
 }
-
-
-.test{
-  background: red;
+.JStodoEditTextArea{
+  width: 60%;
 }
-.test.finish{
+.JSvisibilityHidden{
+  visibility:hidden;
+}
+.JSdisplayNone{
   display: none;
-  background: blue;
 }
+
+
 
 
 
