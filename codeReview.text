@@ -1,0 +1,25 @@
+白板邏輯
+1. 可以看出要做的事
+2. 感覺3、4、5(照片白板上)是做一樣的事可以合成一個function
+
+
+程式
+1. 跟白板邏輯有落差，看不出程式邏輯，程式邏輯應該照著想法走
+2. function 過分切割，太細
+3. function命名瑣碎，名字描述了裡面程式碼做的事，但在使用時不用知道裡面做的事
+   如：addClassNameJSdisplayNone()可改成hiddenItem();
+   如：removeClassNameJSdisplayNone()可改成showItem();
+4. 現在要加一個功能，數量按鈕，如：買雞蛋x3
+   Q:這按鈕要加在task-container 跟 list-container上，會怎麼做？
+   A:直接加在html的task-container，跟用JS創建 btnNumber 加在 list-container
+   Q:只是加一個按鈕卻有兩種不同做法？對howard而言都是要在html上管理的
+   HoA:在html頁面產生微模組，這樣js裡只要複製這模組再改內容就可以了
+   https://www.w3schools.com/tags/tag_template.asp
+   https://stackoverflow.com/questions/4912586/explanation-of-script-type-text-template-script
+   https://blog.csdn.net/u010394015/article/details/52584589
+   https://johnresig.com/blog/javascript-micro-templating/
+
+5. function deleteTodoItem()
+   是判斷arrayTodo跟創建的Todo文字ㄧ樣就刪除
+   但是當兩個待辦事項文字都ㄧ樣時，會發生什麼事？
+   想法是兩個都刪除，但實際上只刪除指定的那個，花黑噴？debug一下
