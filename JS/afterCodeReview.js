@@ -105,7 +105,7 @@ function revisedTodoItem(itemText,itemInputText,btnEdit,btnRevised){
 }
 
 //delete 刪除
-function deleteTodoItem(toDoList,toDoItem){
+function deleteTodoItem(toDoItem){
   toDoList.removeChild(toDoItem);
 }
 
@@ -116,7 +116,7 @@ toDoList.addEventListener('click',function(e){
   let btnEdit = e.target.parentElement.querySelector('.btnEdit');
   let btnRevised = e.target.parentElement.querySelector('.btnRevised');
   let btnDelete = e.target.parentElement.querySelector('.btnDelete');
-  let toDoItem = e.target.parentElement.querySelector('.toDoItem');
+  // let toDoItem = e.target.parentElement.querySelector('.toDoItem');
   if (e.target.matches('.btnEdit')) {
     e.preventDefault();
     editTodoItem(itemText,itemInputText,btnEdit,btnRevised);
@@ -127,7 +127,8 @@ toDoList.addEventListener('click',function(e){
   }
   if (e.target.matches('.btnDelete')) {
     e.preventDefault();
-    deleteTodoItem(toDoList,toDoItem);
+    let toDoItem = e.target.parentElement;
+    deleteTodoItem(toDoItem);
   }
 
   //對 itemInputText 監聽鍵盤 enter 事件
