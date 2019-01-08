@@ -3,31 +3,41 @@
 ************************************************************/
 function showTodos(){
   //取得 inputTask 文字
-  let strInputTask = document.querySelector('.inputTask').value;
+  // let strInputTask = document.querySelector('.inputTask').value;
 
-  //判斷 inputTask 是否為空
-  if(strInputTask === ""){
+  //用文字長度判斷 inputTask 是否為空
+  if(!document.querySelector('.inputTask').value.length){
     window.alert('请输入代辦事項！');
   }
   else{
     //取得 <template> 裡的 todoItem 模板
-    let temp = document.getElementsByTagName('template')[0];
+    // getElementsByxxx 會回傳 HTMLCollection，是 arraylike，但能用的 array method 非常少
+    // querySelectorAll 會回傳 noteList，是 arraylike，能用的 array method 較多
+    // let temp = document.getElementsByTagName('template')[0];
+    let temp = document.querySelector('template');
     let toDoItemTemp = temp.content.querySelector('.toDoItem');
 
     //複製一份 todoItem 模板
     let toDoItem = document.importNode(toDoItemTemp, true);
 
+    //取得 inputTask 文字
+    let strInputTask = document.querySelector('.inputTask').value;
+
     //把 todoItem 裡的文字改為 inputTask 文字
-    toDoItem.children[1].textContent = strInputTask;//toDoItem.children回傳HTMLCollection(6)
+    toDoItem.querySelector('.itemText').textContent = strInputTask;
+    // toDoItem.children[1].textContent = strInputTask;//toDoItem.children回傳HTMLCollection(6)
 
     //把 todoItem 放入 toDoList
     let toDoList = document.querySelector('.toDoList');
     toDoList.appendChild(toDoItem);
 
     //對 itemCheckBox 監聽，如果寫在外面用querySelector('.itemCheckBox')會抓到一個而已
-    toDoItem.children[0].addEventListener('click',function(e){
+    toDoItem.querySelector('.itemCheckBox').addEventListener('click',function(e){
       noneCheckedTodos(e.target);
     });
+    // toDoItem.children[0].addEventListener('click',function(e){
+    //   noneCheckedTodos(e.target);
+    // });
   }
 
   //把inputTask 文字清空
